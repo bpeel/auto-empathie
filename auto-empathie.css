@@ -52,6 +52,7 @@ body {
     padding: 0.5em;
     display: block;
     position: relative;
+    word-wrap: break-word;
 }
 
 .bubble.you {
