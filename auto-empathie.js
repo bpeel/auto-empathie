@@ -1,5 +1,7 @@
 (function ()
  {
+   var flipped = false;
+
    function doubleNumber(n)
    {
      if (n < 10)
@@ -47,6 +49,13 @@
        else
          this.className = "bubble you";
      });
+
+     if (flipped)
+       $("#face").css("transform", "");
+     else
+       $("#face").css("transform", "scaleX(-1)");
+
+     flipped = !flipped;
    }
 
    function setup()
@@ -63,7 +72,8 @@
        }
      });
 
-       handleMessage();
+     $("#face").click(function(e) {
+       swapPeople();
      });
    }
 
