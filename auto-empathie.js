@@ -18,16 +18,21 @@
    function handleMessage()
    {
      var inputBox = $("#inputbox");
-     var text = inputBox.text();
+     var message = inputBox.text();
 
-     if (!(/\S/).test(text))
+     if (!(/\S/).test(message))
        return;
 
      $("#note").remove();
 
      var bubble = document.createElement("div");
      bubble.className = "bubble you";
-     bubble.appendChild(document.createTextNode(text));
+
+     var text = document.createElement("span");
+     text.className = "text";
+     text.appendChild(document.createTextNode(message));
+
+     bubble.appendChild(text);
 
      var timestamp = document.createElement("div");
      var timestampText = createTimeString(new Date());
