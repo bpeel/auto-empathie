@@ -4,11 +4,14 @@ body {
 }
 
 #content {
+    display: flex;
+    flex-direction: column;
     max-width: 60em;
     background-color: #eeeeee;
     margin-left: auto;
     margin-right: auto;
     border-radius: 4px;
+    height: 95vh;
 }
 
 #who {
@@ -37,4 +40,6 @@ body {
 #speech-container {
     background-image: url('background.png');
     background-repeat: repeat;
+    overflow: scroll;
+    flex-grow: 1;
 }
