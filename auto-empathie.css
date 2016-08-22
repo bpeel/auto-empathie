@@ -66,3 +66,14 @@ body {
     bottom: 0.3em;
     right: 0.3em;
 }
+
+#input-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#inputbox {
+    margin: 0.5em;
+    flex-grow: 1;
+    min-height: 3em;
+}
