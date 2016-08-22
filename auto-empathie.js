@@ -28,17 +28,22 @@
      var bubble = document.createElement("div");
      bubble.className = "bubble you";
 
+     var inner = document.createElement("div");
+     inner.className = "bubble-inner";
+
      var text = document.createElement("span");
      text.className = "text";
      text.appendChild(document.createTextNode(message));
 
-     bubble.appendChild(text);
+     inner.appendChild(text);
 
      var timestamp = document.createElement("div");
      var timestampText = createTimeString(new Date());
      timestamp.appendChild(document.createTextNode(timestampText));
      timestamp.className = "timestamp";
-     bubble.appendChild(timestamp);
+     inner.appendChild(timestamp);
+
+     bubble.appendChild(inner);
 
      $("#speech-container").append(bubble);
 
