@@ -39,13 +39,29 @@
      container.scrollTop = container.scrollHeight;
    }
 
+   function swapPeople()
+   {
+     $("#speech-container .bubble").each(function() {
+       if (/\byou\b/.test(this.className))
+         this.className = "bubble them";
+       else
+         this.className = "bubble you";
+     });
+   }
+
    function setup()
    {
      $("#inputbox").keypress(function(e) {
-       if (e.which != 13)
-         return;
+       if (e.which == 13) {
+         e.preventDefault();
 
-       e.preventDefault();
+         handleMessage();
+       } else if (e.keyCode == 9) {
+         e.preventDefault();
+
+         swapPeople();
+       }
+     });
 
        handleMessage();
      });
