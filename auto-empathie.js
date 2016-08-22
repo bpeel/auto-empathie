@@ -23,6 +23,8 @@
      if (!(/^\S/).test(text))
        return;
 
+     $("#note").remove();
+
      var bubble = document.createElement("div");
      bubble.className = "bubble you";
      bubble.appendChild(document.createTextNode(text));
