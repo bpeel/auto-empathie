@@ -61,14 +61,13 @@
    function setup()
    {
      $("#inputbox").keypress(function(e) {
-       if (e.which == 13) {
+       if (e.which == 13 || e.which == 10) {
          e.preventDefault();
 
-         handleMessage();
-       } else if (e.keyCode == 9) {
-         e.preventDefault();
-
-         swapPeople();
+         if (e.ctrlKey)
+           swapPeople();
+         else
+           handleMessage();
        }
      });
 
