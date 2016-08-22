@@ -20,7 +20,7 @@
      var inputBox = $("#inputbox");
      var text = inputBox.text();
 
-     if (!(/^\S/).test(text))
+     if (!(/\S/).test(text))
        return;
 
      $("#note").remove();
